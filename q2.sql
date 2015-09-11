@@ -1,0 +1,1 @@
+select tag, real_name, teams.name from (select tag as tag, real_name as real_name, members.team as team_id from (select player_id, tag as tag , real_name as real_name, nationality from players where game_race = "Z") honors inner join members on honors.player_id = members.player and members.end_date is null) honors2 inner join teams on honors2.team_id = teams.team_id
